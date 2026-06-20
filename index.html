@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101722">
+  <meta name="description" content="Official portal of the Union of the United Republics Armed Forces, including commands, formations, military heritage, strategic infrastructure, and recruitment.">
+  <title>U.U.R. Armed Forces | Official Military Portal</title>
+  <link rel="icon" type="image/png" href="assets/image-01.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --ink: #101722;
+  --ink-2: #182333;
+  --paper: #f4f2ed;
+  --white: #ffffff;
+  --muted: #657080;
+  --line: #d7dbe0;
+  --red: #b92c26;
+  --red-dark: #8f201c;
+  --cyan: #15999c;
+  --cyan-dark: #0d7477;
+  --gold: #c6a15b;
+  --container: 1180px;
+  --shadow: 0 20px 50px rgba(10, 16, 24, .16);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+.container { width: min(var(--container), calc(100% - 40px)); margin-inline: auto; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.skip-link { position: fixed; top: 10px; left: 10px; z-index: 9999; transform: translateY(-150%); background: #fff; color: #000; padding: 10px 14px; font-weight: 700; }
+.skip-link:focus { transform: none; }
+
+.utility-bar { background: #090e15; color: #d7dde4; font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; }
+.utility-inner { min-height: 34px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.utility-links { display: flex; gap: 22px; }
+.utility-links a { text-decoration: none; opacity: .78; }
+.utility-links a:hover { opacity: 1; }
+
+.site-header { position: sticky; top: 0; z-index: 100; background: rgba(16, 23, 34, .97); border-bottom: 1px solid rgba(255,255,255,.08); backdrop-filter: blur(14px); }
+.nav-wrap { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.brand { display: flex; align-items: center; gap: 14px; color: #fff; text-decoration: none; min-width: 260px; }
+.brand img { width: 58px; height: 35px; object-fit: cover; border: 1px solid rgba(255,255,255,.22); }
+.brand-text { display: flex; flex-direction: column; line-height: 1.08; }
+.brand-text strong { font-family: "Barlow Condensed", sans-serif; font-size: 1.4rem; letter-spacing: .055em; text-transform: uppercase; }
+.brand-text small { margin-top: 5px; color: #aab6c4; font-size: .66rem; letter-spacing: .16em; text-transform: uppercase; }
+.primary-nav { display: flex; align-items: center; gap: 29px; }
+.primary-nav a { color: #e7ebef; text-decoration: none; font-size: .84rem; font-weight: 700; letter-spacing: .055em; text-transform: uppercase; }
+.primary-nav > a:not(.nav-apply) { padding-block: 29px; border-bottom: 3px solid transparent; }
+.primary-nav > a:not(.nav-apply):hover { color: #fff; border-bottom-color: var(--cyan); }
+.nav-apply { padding: 13px 18px; background: var(--red); border: 1px solid #d84a43; box-shadow: inset 0 -2px 0 rgba(0,0,0,.18); }
+.nav-apply:hover { background: #ce342e; }
+.menu-toggle { display: none; width: 46px; height: 42px; border: 1px solid rgba(255,255,255,.18); background: transparent; padding: 10px; cursor: pointer; }
+.menu-toggle span:not(.sr-only) { display: block; height: 2px; background: #fff; margin: 5px 0; }
+
+.hero { position: relative; min-height: 720px; display: grid; align-items: center; color: white; overflow: hidden; background: var(--ink); }
+.hero-media { position: absolute; inset: 0; background: url("assets/image-02.webp") center 38% / cover no-repeat; transform: scale(1.015); }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(6,10,16,.95) 0%, rgba(9,15,24,.83) 38%, rgba(9,15,24,.23) 72%, rgba(9,15,24,.18) 100%), linear-gradient(0deg, rgba(8,13,20,.56), transparent 52%); }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: 1; opacity: .075; background-image: linear-gradient(rgba(255,255,255,.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.4) 1px, transparent 1px); background-size: 50px 50px; }
+.hero-content { position: relative; z-index: 2; padding: 94px 0 165px; }
+.eyebrow, .section-kicker { display: flex; align-items: center; gap: 11px; color: var(--red); font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: .88rem; letter-spacing: .17em; text-transform: uppercase; }
+.eyebrow span { width: 32px; height: 3px; background: var(--cyan); }
+.hero h1, h2, h3 { font-family: "Barlow Condensed", sans-serif; }
+.hero h1 { max-width: 780px; margin: 17px 0 18px; font-size: clamp(4.2rem, 8vw, 7.3rem); line-height: .88; letter-spacing: -.02em; text-transform: uppercase; text-shadow: 0 8px 34px rgba(0,0,0,.22); }
+.hero p { max-width: 690px; margin: 0; color: #d6dee7; font-size: 1.08rem; line-height: 1.75; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 31px; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 13px; min-height: 51px; padding: 13px 21px; border: 1px solid transparent; text-decoration: none; font-size: .82rem; font-weight: 800; letter-spacing: .075em; text-transform: uppercase; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
+.button:hover { transform: translateY(-2px); }
+.button-primary { color: #fff; background: var(--red); border-color: #d14943; box-shadow: 0 10px 28px rgba(185,44,38,.26); }
+.button-primary:hover { background: #cc342e; }
+.button-ghost { color: #fff; background: rgba(10,16,24,.28); border-color: rgba(255,255,255,.4); }
+.button-ghost:hover { background: rgba(255,255,255,.08); border-color: #fff; }
+.button.large { min-height: 60px; padding-inline: 28px; }
+.hero-ribbon { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; background: rgba(12,18,27,.94); border-top: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(10px); }
+.ribbon-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.ribbon-grid > div { min-height: 105px; padding: 23px 33px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid rgba(255,255,255,.11); }
+.ribbon-grid > div:first-child { border-left: 1px solid rgba(255,255,255,.11); }
+.ribbon-grid strong { color: #fff; font-family: "Barlow Condensed", sans-serif; font-size: 1.25rem; text-transform: uppercase; letter-spacing: .06em; }
+.ribbon-grid span { color: #9ca9b7; font-size: .8rem; }
+
+.section { padding: 105px 0; }
+.section-kicker { margin-bottom: 12px; }
+.section-kicker.light { color: #d86d68; }
+.section h2 { margin: 0 0 22px; font-size: clamp(2.7rem, 5vw, 4.5rem); line-height: .98; letter-spacing: -.02em; text-transform: uppercase; }
+.lead { font-size: 1.15rem; color: #354052; }
+.two-column { display: grid; grid-template-columns: 1fr .92fr; gap: 72px; align-items: center; }
+.mission p { max-width: 650px; color: #596373; }
+.mission-values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 34px; border: 1px solid var(--line); background: #fff; }
+.mission-values > div { min-height: 150px; padding: 20px; border-right: 1px solid var(--line); display: flex; flex-direction: column; }
+.mission-values > div:last-child { border-right: 0; }
+.mission-values span { color: var(--red); font-family: "Barlow Condensed", sans-serif; font-weight: 800; }
+.mission-values strong { margin-top: 16px; font-family: "Barlow Condensed", sans-serif; font-size: 1.3rem; text-transform: uppercase; }
+.mission-values small { margin-top: 6px; color: #6b7480; line-height: 1.4; }
+.feature-image { position: relative; margin: 0; box-shadow: var(--shadow); }
+.feature-image::before { content: ""; position: absolute; inset: -15px 15px 15px -15px; border: 2px solid var(--cyan); z-index: -1; }
+.feature-image img { width: 100%; aspect-ratio: 5/4; object-fit: cover; }
+.feature-image figcaption { position: absolute; left: 0; bottom: 0; padding: 12px 18px; color: #fff; background: rgba(10,16,24,.9); font-size: .77rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+
+.commands-section { position: relative; color: #fff; background: var(--ink); overflow: hidden; }
+.commands-section::before { content: ""; position: absolute; inset: 0; opacity: .09; background-image: linear-gradient(30deg, transparent 48%, #fff 49%, #fff 51%, transparent 52%); background-size: 48px 48px; }
+.commands-section .container { position: relative; }
+.section-heading-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 50px; margin-bottom: 45px; }
+.section-heading-row h2 { margin-bottom: 0; max-width: 760px; }
+.section-heading-row > p { max-width: 400px; margin: 0 0 4px; color: #aab6c4; }
+.section-heading-row.dark-text > p { color: #677181; }
+.command-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-left: 1px solid rgba(255,255,255,.13); border-top: 1px solid rgba(255,255,255,.13); }
+.command-card { position: relative; min-height: 280px; padding: 29px; border-right: 1px solid rgba(255,255,255,.13); border-bottom: 1px solid rgba(255,255,255,.13); background: rgba(255,255,255,.025); overflow: hidden; }
+.command-card::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: var(--cyan); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+.command-card:hover { background: rgba(255,255,255,.055); }
+.command-card:hover::after { transform: scaleX(1); }
+.command-card.featured { background: linear-gradient(145deg, rgba(185,44,38,.2), rgba(255,255,255,.025)); }
+.command-number { color: #78889a; font-family: "Barlow Condensed", sans-serif; font-size: .9rem; font-weight: 800; letter-spacing: .1em; }
+.command-card h3 { margin: 51px 0 12px; font-size: 1.65rem; line-height: 1; text-transform: uppercase; }
+.command-card p { color: #aeb9c5; font-size: .91rem; }
+.command-card > span { position: absolute; left: 29px; bottom: 22px; color: #dbe2e8; font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+
+
+/* Distinct formations */
+.formations-section { background: #f0eee8; }
+.formation-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+.formation-card { position: relative; grid-column: span 4; min-height: 310px; padding: 29px; background: #fff; border: 1px solid #d8dce0; box-shadow: 0 15px 34px rgba(16,23,34,.08); overflow: hidden; }
+.formation-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--cyan); }
+.formation-card.major { grid-column: span 8; display: grid; grid-template-columns: 1.25fr .75fr; align-items: stretch; min-height: 365px; padding: 0; color: #fff; background: var(--ink); border-color: var(--ink); }
+.formation-card.major::before { height: 6px; background: linear-gradient(90deg, var(--red) 0 42%, #fff 42% 48%, var(--cyan) 48% 100%); }
+.formation-copy { padding: 38px; }
+.formation-label { color: var(--red); font-size: .7rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.formation-card.major .formation-label { color: #e78984; }
+.formation-card h3 { margin: 52px 0 14px; font-size: 1.85rem; line-height: 1; text-transform: uppercase; }
+.formation-card.major h3 { margin-top: 20px; font-size: clamp(2.8rem, 4.5vw, 4.2rem); }
+.formation-card p { margin: 0; color: #66717f; font-size: .92rem; }
+.formation-card.major p { color: #bdc7d2; max-width: 600px; }
+.formation-card footer { position: absolute; left: 29px; right: 29px; bottom: 24px; display: flex; justify-content: space-between; gap: 16px; color: #5e6875; font-size: .67rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+.formation-mark { position: relative; min-height: 100%; display: grid; place-items: center; overflow: hidden; background: linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.015)); border-left: 1px solid rgba(255,255,255,.11); }
+.formation-mark::before, .formation-mark::after { content: ""; position: absolute; width: 150%; height: 46px; transform: rotate(-31deg); }
+.formation-mark::before { background: var(--red); top: 25%; }
+.formation-mark::after { background: var(--cyan); bottom: 25%; }
+.formation-mark strong { position: relative; z-index: 2; display: grid; place-items: center; width: 138px; height: 138px; border: 3px solid #fff; background: rgba(16,23,34,.92); font-family: "Barlow Condensed", sans-serif; font-size: 3.2rem; letter-spacing: .05em; }
+.formation-photo { grid-column: span 4; min-height: 310px; margin: 0; position: relative; overflow: hidden; background: #101722; box-shadow: var(--shadow); }
+.formation-photo img { width: 100%; height: 100%; object-fit: cover; }
+.formation-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(5,8,12,.92), transparent 65%); }
+.formation-photo figcaption { position: absolute; z-index: 2; left: 24px; right: 24px; bottom: 21px; color: #fff; }
+.formation-photo strong { display: block; font-family: "Barlow Condensed", sans-serif; font-size: 1.5rem; text-transform: uppercase; }
+.formation-photo span { color: #c4ced8; font-size: .68rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+
+/* Military heritage */
+.legends-section { position: relative; color: #fff; background: #0f1722; overflow: hidden; }
+.legends-section::before { content: ""; position: absolute; inset: 0; opacity: .07; background-image: linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px); background-size: 70px 70px; }
+.legends-section .container { position: relative; }
+.legend-feature { display: grid; grid-template-columns: .78fr 1.22fr; min-height: 520px; margin-top: 46px; background: #172231; border: 1px solid rgba(255,255,255,.12); box-shadow: 0 28px 65px rgba(0,0,0,.32); }
+.legend-portrait { position: relative; margin: 0; overflow: hidden; }
+.legend-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 32%; }
+.legend-portrait::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 55%, #172231 100%), linear-gradient(0deg, rgba(8,12,18,.62), transparent 45%); }
+.legend-copy { padding: 55px 58px; align-self: center; }
+.legend-rank { color: #e78984; font-size: .72rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+.legend-copy h3 { margin: 14px 0 0; font-size: clamp(3.3rem, 6vw, 5.8rem); line-height: .84; text-transform: uppercase; }
+.legend-title { margin: 13px 0 25px; color: var(--gold); font-family: "Barlow Condensed", sans-serif; font-size: 1.45rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.legend-copy p { max-width: 670px; color: #b8c3ce; }
+.legend-quote { margin-top: 30px; padding: 18px 0 18px 24px; border-left: 3px solid var(--cyan); color: #e5ebf0; font-family: "Barlow Condensed", sans-serif; font-size: 1.25rem; letter-spacing: .02em; }
+.legend-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 18px; }
+.legend-card { min-height: 255px; padding: 30px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.11); }
+.legend-card span { color: #df7974; font-size: .68rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.legend-card h3 { margin: 37px 0 11px; font-size: 1.8rem; line-height: 1; text-transform: uppercase; }
+.legend-card strong { display: block; color: var(--gold); font-family: "Barlow Condensed", sans-serif; text-transform: uppercase; }
+.legend-card p { margin-top: 15px; color: #aeb9c5; font-size: .9rem; }
+
+/* Strategic power infrastructure */
+.power-section { color: #fff; background: #111a26; }
+.power-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 58px; align-items: center; }
+.power-copy p { color: #b6c0cb; max-width: 610px; }
+.power-points { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 32px; border: 1px solid rgba(255,255,255,.13); }
+.power-points div { min-height: 125px; padding: 20px; border-right: 1px solid rgba(255,255,255,.13); }
+.power-points div:last-child { border-right: 0; }
+.power-points strong { display: block; color: #fff; font-family: "Barlow Condensed", sans-serif; font-size: 1.15rem; text-transform: uppercase; }
+.power-points span { display: block; margin-top: 8px; color: #93a2b1; font-size: .76rem; line-height: 1.45; }
+.power-visuals { display: grid; grid-template-columns: 1fr .72fr; grid-template-rows: 230px 230px; gap: 15px; }
+.power-image { position: relative; margin: 0; overflow: hidden; background: #080d14; box-shadow: 0 20px 48px rgba(0,0,0,.32); }
+.power-image.main { grid-row: 1 / 3; }
+.power-image img { width: 100%; height: 100%; object-fit: cover; }
+.power-image.main img { object-position: center 46%; }
+.power-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(5,8,12,.82), transparent 60%); }
+.power-image figcaption { position: absolute; z-index: 2; left: 17px; right: 17px; bottom: 14px; color: #fff; font-size: .68rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.power-status { display: flex; flex-direction: column; justify-content: center; padding: 26px; background: linear-gradient(145deg, rgba(21,153,156,.23), rgba(255,255,255,.03)); border: 1px solid rgba(255,255,255,.13); }
+.power-status small { color: #9eabb8; font-size: .66rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.power-status strong { margin-top: 14px; font-family: "Barlow Condensed", sans-serif; font-size: 2rem; line-height: 1; text-transform: uppercase; }
+.power-status span { margin-top: 12px; color: #bfccd7; font-size: .8rem; }
+
+.gallery-section { background: #e9e7e1; }
+.gallery-grid { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 245px; gap: 16px; }
+.gallery-item { position: relative; grid-column: span 4; border: 0; padding: 0; background: #141c28; cursor: zoom-in; overflow: hidden; text-align: left; }
+.gallery-item.wide { grid-column: span 8; }
+.gallery-item.tall { grid-row: span 2; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease, opacity .4s ease; }
+.gallery-item::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(5,8,12,.9), transparent 58%); }
+.gallery-item:hover img { transform: scale(1.04); opacity: .92; }
+.gallery-item > span { position: absolute; z-index: 2; left: 22px; right: 22px; bottom: 19px; display: flex; flex-direction: column; color: #fff; }
+.gallery-item strong { font-family: "Barlow Condensed", sans-serif; font-size: 1.35rem; text-transform: uppercase; letter-spacing: .025em; }
+.gallery-item small { color: #c7d0d9; font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+
+.standards-section { color: #fff; background: #141d2a; }
+.standards-grid { display: grid; grid-template-columns: 1.25fr .8fr .8fr; gap: 26px; align-items: stretch; }
+.standards-copy { padding: 18px 35px 18px 0; }
+.standards-copy p { color: #aeb9c5; max-width: 540px; }
+.flag-card { margin: 0; background: #fff; box-shadow: 0 16px 35px rgba(0,0,0,.22); }
+.flag-card img { width: 100%; aspect-ratio: 2/1; object-fit: cover; image-rendering: pixelated; }
+.flag-card figcaption { padding: 17px 18px 19px; display: flex; flex-direction: column; color: var(--ink); }
+.flag-card strong { font-family: "Barlow Condensed", sans-serif; font-size: 1.25rem; text-transform: uppercase; }
+.flag-card span { color: #707986; font-size: .75rem; }
+
+.notices { background: var(--paper); }
+.notice-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 3px solid var(--ink); }
+.notice-grid article { padding: 29px 28px 24px 0; margin-right: 28px; border-bottom: 1px solid #cdd2d7; }
+.notice-grid time { color: var(--red); font-size: .69rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.notice-grid h3 { margin: 23px 0 12px; font-size: 1.55rem; line-height: 1.12; text-transform: uppercase; }
+.notice-grid p { color: #66707e; font-size: .9rem; }
+.notice-grid a { display: inline-flex; gap: 9px; margin-top: 18px; color: var(--ink); font-size: .75rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; text-decoration: none; }
+.notice-grid a:hover { color: var(--red); }
+
+.recruitment { position: relative; color: #fff; background: #0d151f; overflow: hidden; }
+.recruitment-bg { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,17,26,.97), rgba(11,17,26,.74)), url("assets/image-02.webp") center 48% / cover no-repeat; }
+.recruitment-inner { position: relative; min-height: 330px; display: flex; align-items: center; justify-content: space-between; gap: 50px; padding-block: 70px; }
+.recruitment h2 { margin: 0 0 14px; font-size: clamp(3rem, 5vw, 5rem); line-height: .95; text-transform: uppercase; }
+.recruitment p { max-width: 620px; color: #c2cbd4; }
+
+.site-footer { color: #bbc4ce; background: #080d14; }
+.footer-grid { display: grid; grid-template-columns: 1.6fr repeat(3, 1fr); gap: 42px; padding: 65px 0 48px; }
+.footer-brand { display: flex; align-items: flex-start; gap: 16px; }
+.footer-brand img { width: 74px; height: 42px; object-fit: cover; border: 1px solid rgba(255,255,255,.16); }
+.footer-brand div { display: flex; flex-direction: column; }
+.footer-brand strong { color: #fff; font-family: "Barlow Condensed", sans-serif; font-size: 1.35rem; text-transform: uppercase; }
+.footer-brand span { font-size: .74rem; }
+.site-footer h3 { margin: 0 0 16px; color: #fff; font-size: .78rem; font-family: Inter, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+.site-footer a { display: block; margin: 8px 0; color: #aeb8c3; text-decoration: none; font-size: .85rem; }
+.site-footer a:hover { color: #fff; }
+.site-footer p { margin: 0; font-size: .85rem; }
+.footer-bottom { min-height: 58px; display: flex; justify-content: space-between; align-items: center; gap: 20px; border-top: 1px solid rgba(255,255,255,.1); font-size: .7rem; letter-spacing: .07em; text-transform: uppercase; }
+
+.lightbox { width: min(1100px, calc(100% - 32px)); max-height: calc(100% - 32px); border: 0; padding: 0; background: #080d14; color: #fff; box-shadow: 0 30px 100px rgba(0,0,0,.55); }
+.lightbox::backdrop { background: rgba(2,5,9,.86); backdrop-filter: blur(6px); }
+.lightbox img { width: 100%; max-height: 78vh; object-fit: contain; background: #05080c; }
+.lightbox p { margin: 0; padding: 16px 52px 18px 20px; font-family: "Barlow Condensed", sans-serif; font-size: 1.1rem; text-transform: uppercase; }
+.lightbox-close { position: absolute; top: 10px; right: 12px; z-index: 4; width: 40px; height: 40px; border: 1px solid rgba(255,255,255,.35); color: #fff; background: rgba(6,10,15,.72); font-size: 1.55rem; cursor: pointer; }
+
+
+@media (max-width: 1100px) {
+  .primary-nav { gap: 18px; }
+  .primary-nav a { font-size: .78rem; }
+  .formation-card.major { grid-column: span 12; }
+  .formation-card, .formation-photo { grid-column: span 6; }
+  .power-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 980px) {
+  .menu-toggle { display: block; }
+  .primary-nav { position: absolute; top: 100%; left: 0; right: 0; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 10px 20px 20px; background: #101722; border-top: 1px solid rgba(255,255,255,.09); box-shadow: 0 20px 35px rgba(0,0,0,.25); }
+  .primary-nav.open { display: flex; }
+  .primary-nav > a:not(.nav-apply) { padding: 14px 5px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .nav-apply { margin-top: 12px; text-align: center; }
+  .two-column { grid-template-columns: 1fr; gap: 55px; }
+  .command-grid { grid-template-columns: repeat(2, 1fr); }
+  .formation-card.major { grid-template-columns: 1fr .55fr; }
+  .legend-feature { grid-template-columns: 1fr 1.15fr; }
+  .legend-copy { padding: 42px; }
+  .power-visuals { grid-template-columns: 1fr 1fr; }
+  .standards-grid { grid-template-columns: 1fr 1fr; }
+  .standards-copy { grid-column: 1 / -1; }
+  .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; }
+  .footer-grid > div:last-child { grid-column: 2; }
+}
+
+@media (max-width: 760px) {
+  .container { width: min(100% - 28px, var(--container)); }
+  .utility-links { display: none; }
+  .utility-inner { justify-content: center; text-align: center; }
+  .brand { min-width: 0; }
+  .brand img { width: 49px; height: 30px; }
+  .brand-text strong { font-size: 1.16rem; }
+  .brand-text small { font-size: .58rem; }
+  .hero { min-height: 760px; align-items: start; }
+  .hero-media { background-position: 48% center; }
+  .hero-overlay { background: linear-gradient(90deg, rgba(6,10,16,.94), rgba(6,10,16,.55)), linear-gradient(0deg, rgba(6,10,16,.75), transparent 52%); }
+  .hero-content { padding-top: 92px; padding-bottom: 260px; }
+  .hero h1 { font-size: clamp(3.4rem, 17vw, 5.4rem); }
+  .hero p { font-size: .98rem; }
+  .hero-actions { flex-direction: column; align-items: stretch; max-width: 390px; }
+  .ribbon-grid { grid-template-columns: 1fr; padding: 10px 0; }
+  .ribbon-grid > div { min-height: 63px; padding: 8px 17px; border: 0 !important; }
+  .ribbon-grid span { font-size: .74rem; }
+  .section { padding: 78px 0; }
+  .section h2 { font-size: 2.75rem; }
+  .mission-values { grid-template-columns: 1fr; }
+  .mission-values > div { min-height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
+  .mission-values > div:last-child { border-bottom: 0; }
+  .section-heading-row { display: block; }
+  .section-heading-row > p { margin-top: 20px; }
+  .command-grid { grid-template-columns: 1fr; }
+  .formation-grid { grid-template-columns: 1fr; }
+  .formation-card, .formation-card.major, .formation-photo { grid-column: auto; }
+  .formation-card.major { grid-template-columns: 1fr; }
+  .formation-mark { min-height: 230px; border-left: 0; border-top: 1px solid rgba(255,255,255,.11); }
+  .legend-feature { grid-template-columns: 1fr; }
+  .legend-portrait { min-height: 420px; }
+  .legend-portrait::after { background: linear-gradient(0deg, #172231 0%, transparent 43%); }
+  .legend-copy { padding: 36px 28px 42px; }
+  .legend-grid { grid-template-columns: 1fr; }
+  .power-points { grid-template-columns: 1fr; }
+  .power-points div { min-height: auto; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.13); }
+  .power-points div:last-child { border-bottom: 0; }
+  .power-visuals { grid-template-columns: 1fr; grid-template-rows: 330px 250px auto; }
+  .power-image.main { grid-row: auto; }
+  .power-status { min-height: 190px; }
+  .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 240px; }
+  .gallery-item, .gallery-item.wide, .gallery-item.tall { grid-column: auto; grid-row: auto; }
+  .standards-grid { grid-template-columns: 1fr; }
+  .standards-copy { grid-column: auto; padding-right: 0; }
+  .notice-grid { grid-template-columns: 1fr; }
+  .notice-grid article { margin-right: 0; }
+  .recruitment-inner { min-height: 430px; flex-direction: column; align-items: flex-start; justify-content: center; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-grid > div:last-child { grid-column: auto; }
+}
+
+@media (max-width: 480px) {
+  .brand-text small { display: none; }
+  .site-header .nav-wrap { min-height: 68px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-brand, .footer-grid > div:last-child { grid-column: auto; }
+  .footer-bottom { align-items: flex-start; flex-direction: column; justify-content: center; padding: 16px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div class="utility-bar">
+    <div class="container utility-inner">
+      <span>Official portal of the Union Armed Forces</span>
+      <div class="utility-links" aria-label="Utility links">
+        <a href="#news">Command notices</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="U.U.R. Armed Forces home">
+        <img src="assets/image-03.png" alt="U.U.R. military standard">
+        <span class="brand-text">
+          <strong>U.U.R. Armed Forces</strong>
+          <small>Unity · Order · Defense</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Open navigation</span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <a href="#mission">Mission</a>
+        <a href="#commands">Commands</a>
+        <a href="#formations">Formations</a>
+        <a href="#legends">Legends</a>
+        <a href="#power">Power</a>
+        <a href="#gallery">Gallery</a>
+        <a class="nav-apply" href="https://forms.gle/EhBkStaj9p4K9wJP6" target="_blank" rel="noopener noreferrer">Apply to Join</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" role="img" aria-label="U.U.R. personnel standing in a fortified city"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="eyebrow"><span></span> Service to the Union</div>
+        <h1 id="hero-title">Defending the Union.<br>Securing its future.</h1>
+        <p>The U.U.R. Armed Forces protect the people, territory, institutions, and shared future of the Union across land and sea.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://forms.gle/EhBkStaj9p4K9wJP6" target="_blank" rel="noopener noreferrer">Begin Your Application <span aria-hidden="true">→</span></a>
+          <a class="button button-ghost" href="#commands">Explore the Commands</a>
+        </div>
+      </div>
+      <div class="hero-ribbon">
+        <div class="container ribbon-grid">
+          <div><strong>Prepared</strong><span>Modern forces and equipment</span></div>
+          <div><strong>United</strong><span>One military, one Union</span></div>
+          <div><strong>Committed</strong><span>Service with discipline and honor</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section mission" id="mission">
+      <div class="container two-column">
+        <div>
+          <div class="section-kicker">Our mission</div>
+          <h2>Ready wherever the Union calls.</h2>
+          <p class="lead">The Armed Forces provide a unified defense capability built around disciplined personnel, dependable logistics, and coordinated command.</p>
+          <p>From protected cities and coastal installations to artillery batteries and armored formations, every command serves the same purpose: preserve the security and continuity of the Union.</p>
+          <div class="mission-values">
+            <div><span>01</span><strong>Duty</strong><small>Place the Union and its people first.</small></div>
+            <div><span>02</span><strong>Discipline</strong><small>Act with order, restraint, and precision.</small></div>
+            <div><span>03</span><strong>Readiness</strong><small>Train, maintain, and prepare without pause.</small></div>
+          </div>
+        </div>
+        <figure class="feature-image">
+          <img src="assets/image-04.webp" alt="U.U.R. Capital Building and ceremonial plaza in Central City" loading="lazy">
+          <figcaption>U.U.R. Capital Building · Central City</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section commands-section" id="commands">
+      <div class="container">
+        <div class="section-heading-row">
+          <div>
+            <div class="section-kicker light">Service commands</div>
+            <h2>A single force. Specialized commands.</h2>
+          </div>
+          <p>Each command maintains a distinct mission while operating under unified military leadership.</p>
+        </div>
+
+        <div class="command-grid">
+          <article class="command-card">
+            <div class="command-number">01</div>
+            <h3>Union Ground Forces</h3>
+            <p>Infantry, field units, garrison forces, and territorial defense formations.</p>
+            <span>Land operations</span>
+          </article>
+          <article class="command-card featured">
+            <div class="command-number">02</div>
+            <h3>Central Artillery Command</h3>
+            <p>Field batteries, fortified guns, siege support, and coordinated long-range fire.</p>
+            <span>Fire support</span>
+          </article>
+          <article class="command-card">
+            <div class="command-number">03</div>
+            <h3>Union Naval Service</h3>
+            <p>Harbor defense, coastal security, island installations, and maritime patrol.</p>
+            <span>Maritime defense</span>
+          </article>
+          <article class="command-card">
+            <div class="command-number">04</div>
+            <h3>Armored Defense Corps</h3>
+            <p>Armored vehicles, mechanized support, mobile defense, and breakthrough operations.</p>
+            <span>Mechanized operations</span>
+          </article>
+          <article class="command-card">
+            <div class="command-number">05</div>
+            <h3>Capital Guard</h3>
+            <p>Protection of Central City, national institutions, military districts, and ceremonies.</p>
+            <span>Strategic security</span>
+          </article>
+          <article class="command-card">
+            <div class="command-number">06</div>
+            <h3>Logistics & Engineering</h3>
+            <p>Supply, transport, construction, repair, fortification, and operational sustainment.</p>
+            <span>Mission support</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section formations-section" id="formations">
+      <div class="container">
+        <div class="section-heading-row dark-text">
+          <div>
+            <div class="section-kicker">Union formations</div>
+            <h2>Different traditions. One chain of command.</h2>
+          </div>
+          <p>The Armed Forces bring together national divisions, strategic districts, and specialist corps under unified Union leadership.</p>
+        </div>
+
+        <div class="formation-grid">
+          <article class="formation-card major">
+            <div class="formation-copy">
+              <div class="formation-label">National service formation</div>
+              <h3>Valorian Division</h3>
+              <p>The Valorian Division is the organized armed force of Valoria operating inside the larger U.U.R. military. It preserves Valorian military traditions, uniforms, language, and internal unit identity while serving under Union High Command during joint operations and national emergencies.</p>
+              <p style="margin-top:16px">Valorian officers retain responsibility for the division's training and internal discipline, while strategic deployment is coordinated with the wider Armed Forces.</p>
+            </div>
+            <div class="formation-mark" aria-hidden="true"><strong>VD</strong></div>
+          </article>
+
+          <article class="formation-card">
+            <div class="formation-label">Capital formation</div>
+            <h3>Central City Defense District</h3>
+            <p>A joint formation responsible for the protection of Central City, the Capital Building, military installations, transport corridors, and essential public infrastructure.</p>
+            <footer><span>Capital security</span><span>Joint command</span></footer>
+          </article>
+
+          <figure class="formation-photo">
+            <img src="assets/image-05.webp" alt="U.U.R. armored vehicles arranged in a military reserve yard" loading="lazy">
+            <figcaption><strong>Armored Reserve Group</strong><span>Strategic vehicle reserve · Central City</span></figcaption>
+          </figure>
+
+          <article class="formation-card">
+            <div class="formation-label">Technical formation</div>
+            <h3>Engineering & Power Corps</h3>
+            <p>Military engineers, technicians, builders, and utility crews who maintain fortifications, repair damaged infrastructure, and operate the Union's strategic power facilities.</p>
+            <footer><span>Infrastructure</span><span>Emergency response</span></footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section legends-section" id="legends">
+      <div class="container">
+        <div class="section-heading-row">
+          <div>
+            <div class="section-kicker light">Military heritage</div>
+            <h2>One legend remembered across the Armed Forces.</h2>
+          </div>
+          <p>General Grizzly is honored as one of the defining names in U.U.R. military history and remains a symbol of discipline, endurance, and armored strength.</p>
+        </div>
+
+        <article class="legend-feature">
+          <figure class="legend-portrait">
+            <img src="assets/image-06.png" alt="Union armored yard representing the legacy of General Grizzly, the Iron Bear" loading="lazy">
+            <figcaption>Armored reserve grounds · legacy of General Grizzly</figcaption>
+          </figure>
+          <div class="legend-copy">
+            <div class="legend-rank">General of the Union Ground Forces</div>
+            <h3>General Grizzly</h3>
+            <div class="legend-title">The Iron Bear</div>
+            <p>General Grizzly became one of the most respected commanders in U.U.R. history through a reputation for unbreakable defensive lines, careful planning, and decisive armored counterattacks. Troops gave the general the name “Iron Bear” for standing firm in the Union’s hardest campaigns and refusing to surrender ground placed under their protection.</p>
+            <p>Military doctrine later credited Grizzly with helping transform separate regional forces into disciplined formations capable of operating as one Union force. Their legacy still influences how the U.U.R. trains, organizes, and deploys its ground units today.</p>
+            <div class="legend-quote">“A line is strongest when every soldier knows the Union stands behind it.”</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section power-section" id="power">
+      <div class="container power-layout">
+        <div class="power-copy">
+          <div class="section-kicker light">Strategic infrastructure</div>
+          <h2>The military keeps the Union powered.</h2>
+          <p>The U.U.R. Central Power Station is operated and protected by the Engineering & Power Corps. Its primary responsibility is to supply Central City, government districts, military facilities, and the wider Union transmission network.</p>
+          <p>Military oversight ensures that power generation, distribution, repairs, and emergency restoration continue even during war, natural disaster, or disruption to civilian systems. The station is treated as both a public utility and a national defense installation.</p>
+          <div class="power-points">
+            <div><strong>Central City Grid</strong><span>Priority service for the capital and its essential institutions.</span></div>
+            <div><strong>Union Distribution</strong><span>Power transferred into the larger national transmission network.</span></div>
+            <div><strong>Emergency Control</strong><span>Protected military crews maintain round-the-clock response capability.</span></div>
+          </div>
+        </div>
+
+        <div class="power-visuals">
+          <figure class="power-image main">
+            <img src="assets/image-07.webp" alt="Interior of the U.U.R. Central Power Station with large generators and Union banners" loading="lazy">
+            <figcaption>Central Power Station · Main generation hall</figcaption>
+          </figure>
+          <figure class="power-image">
+            <img src="assets/image-08.webp" alt="Exterior distribution yard of the U.U.R. Central Power Station" loading="lazy">
+            <figcaption>Military power distribution yard</figcaption>
+          </figure>
+          <div class="power-status">
+            <small>Operational authority</small>
+            <strong>Engineering & Power Corps</strong>
+            <span>Generation, security, maintenance, and emergency restoration under one military command.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-heading-row dark-text">
+          <div>
+            <div class="section-kicker">In service</div>
+            <h2>The Armed Forces in the field.</h2>
+          </div>
+          <p>Training, equipment, personnel, and installations from across the Union.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <button class="gallery-item wide" data-image="assets/image-09.webp" data-caption="Uniforms of the Union Armed Forces">
+            <img src="assets/image-09.webp" alt="Display of U.U.R. military uniforms" loading="lazy">
+            <span><strong>Uniforms of Service</strong><small>Personnel & traditions</small></span>
+          </button>
+          <button class="gallery-item" data-image="assets/image-10.webp" data-caption="Central Artillery battery">
+            <img src="assets/image-10.webp" alt="U.U.R. artillery positioned outside a military building" loading="lazy">
+            <span><strong>Artillery Battery</strong><small>Field readiness</small></span>
+          </button>
+          <button class="gallery-item" data-image="assets/image-11.webp" data-caption="Armored Defense Corps vehicle">
+            <img src="assets/image-11.webp" alt="U.U.R. armored vehicle in an urban military district" loading="lazy">
+            <span><strong>Armored Corps</strong><small>Mobile defense</small></span>
+          </button>
+          <button class="gallery-item tall" data-image="assets/image-12.webp" data-caption="Naval fortress and harbor installation">
+            <img src="assets/image-12.webp" alt="U.U.R. naval fortress illuminated at night" loading="lazy">
+            <span><strong>Naval Fortress</strong><small>Coastal command</small></span>
+          </button>
+          <button class="gallery-item" data-image="assets/image-13.webp" data-caption="Central City military district">
+            <img src="assets/image-13.webp" alt="Central City skyline and military district" loading="lazy">
+            <span><strong>Central City</strong><small>Home of Central Command</small></span>
+          </button>
+          <button class="gallery-item wide" data-image="assets/image-05.webp" data-caption="Armored Reserve Group staging yard">
+            <img src="assets/image-05.webp" alt="Large formations of U.U.R. armored vehicles outside a military hangar" loading="lazy">
+            <span><strong>Strategic Armored Reserve</strong><small>Equipment & readiness</small></span>
+          </button>
+          <button class="gallery-item" data-image="assets/image-08.webp" data-caption="Military power distribution yard">
+            <img src="assets/image-08.webp" alt="U.U.R. military power distribution yard" loading="lazy">
+            <span><strong>Power Station Yard</strong><small>Strategic infrastructure</small></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section standards-section">
+      <div class="container standards-grid">
+        <div class="standards-copy">
+          <div class="section-kicker light">National standards</div>
+          <h2>Symbols carried in every command.</h2>
+          <p>The national flag represents the Union and its people. The military standard identifies the Armed Forces and accompanies personnel, installations, and official military ceremonies.</p>
+        </div>
+        <figure class="flag-card">
+          <img src="assets/image-14.png" alt="Flag of the Union of the United Republics">
+          <figcaption><strong>National Flag</strong><span>Union of the United Republics</span></figcaption>
+        </figure>
+        <figure class="flag-card">
+          <img src="assets/image-03.png" alt="Standard of the U.U.R. Armed Forces">
+          <figcaption><strong>Military Standard</strong><span>U.U.R. Armed Forces</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section notices" id="news">
+      <div class="container">
+        <div class="section-heading-row dark-text">
+          <div>
+            <div class="section-kicker">Command notices</div>
+            <h2>Information for applicants and personnel.</h2>
+          </div>
+        </div>
+        <div class="notice-grid">
+          <article>
+            <time datetime="2026-06-19">Recruitment</time>
+            <h3>Applications are open for new service members.</h3>
+            <p>Applicants may submit the official form for consideration by military recruitment command.</p>
+            <a href="https://forms.gle/EhBkStaj9p4K9wJP6" target="_blank" rel="noopener noreferrer">Open application <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <time>Service information</time>
+            <h3>Choose a command aligned with your strengths.</h3>
+            <p>Applicants can express interest in ground, artillery, naval, armored, guard, or support roles.</p>
+            <a href="#commands">Review commands <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <time>Standards</time>
+            <h3>Discipline and readiness begin before enlistment.</h3>
+            <p>Prospective members should be prepared to follow command structure and serve as part of a coordinated force.</p>
+            <a href="#mission">Read the mission <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="recruitment" id="apply">
+      <div class="recruitment-bg"></div>
+      <div class="container recruitment-inner">
+        <div>
+          <div class="section-kicker light">Your service starts here</div>
+          <h2>Stand ready. Serve the Union.</h2>
+          <p>Complete the official application to begin the recruitment process for the U.U.R. Armed Forces.</p>
+        </div>
+        <a class="button button-primary large" href="https://forms.gle/EhBkStaj9p4K9wJP6" target="_blank" rel="noopener noreferrer">Apply to Join the Military <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/image-03.png" alt="">
+        <div><strong>U.U.R. Armed Forces</strong><span>Official Military Portal</span></div>
+      </div>
+      <div>
+        <h3>Navigate</h3>
+        <a href="#mission">Mission</a>
+        <a href="#commands">Commands</a>
+        <a href="#formations">Formations</a>
+        <a href="#legends">Military Legends</a>
+        <a href="#power">Power Station</a>
+        <a href="#gallery">Gallery</a>
+      </div>
+      <div>
+        <h3>Recruitment</h3>
+        <a href="https://forms.gle/EhBkStaj9p4K9wJP6" target="_blank" rel="noopener noreferrer">Application Form</a>
+        <a href="#news">Applicant Information</a>
+      </div>
+      <div>
+        <h3>Headquarters</h3>
+        <p>Central Command<br>Central City, U.U.R.</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> U.U.R. Armed Forces</span>
+      <span>Unity · Order · Defense</span>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox">
+    <button class="lightbox-close" type="button" aria-label="Close image">×</button>
+    <img src="" alt="">
+    <p></p>
+  </dialog>
+  <script>
+const menuButton = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.primary-nav');
+
+menuButton?.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  menuButton.setAttribute('aria-expanded', String(open));
+});
+
+nav?.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('open');
+    menuButton?.setAttribute('aria-expanded', 'false');
+  });
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = lightbox?.querySelector('img');
+const lightboxCaption = lightbox?.querySelector('p');
+const lightboxClose = lightbox?.querySelector('.lightbox-close');
+
+document.querySelectorAll('.gallery-item').forEach(item => {
+  item.addEventListener('click', () => {
+    lightboxImage.src = item.dataset.image;
+    lightboxImage.alt = item.dataset.caption || 'Expanded military image';
+    lightboxCaption.textContent = item.dataset.caption || '';
+    lightbox.showModal();
+  });
+});
+
+lightboxClose?.addEventListener('click', () => lightbox.close());
+lightbox?.addEventListener('click', event => {
+  if (event.target === lightbox) lightbox.close();
+});
+
+  </script>
+</body>
+</html>
